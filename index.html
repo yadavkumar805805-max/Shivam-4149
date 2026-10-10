@@ -1,0 +1,560 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Yadav | Portfolio</title>
+	<style>
+	
+	         /* Basic Setup */
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         scroll-behavior: smooth;
+        }
+
+     :root {
+            --bg: #080d18;
+            --card: #111a2b;
+            --text: #f1f5f9;
+            --muted: #b7c3d5;
+            --blue: #08a9ff;
+            --border: #263449;
+           }
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+span {
+    color: var(--blue);
+}
+
+/* Navbar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar a {
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--blue);
+}
+
+.menu-btn,
+.theme-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+/* Home */
+.home {
+    min-height: 85vh;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.home-content {
+    max-width: 650px;
+}
+
+.intro {
+    color: var(--blue);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.home h1 {
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.home h2 {
+    font-size: 25px;
+    color: var(--muted);
+}
+
+.description {
+    margin: 20px 0;
+    color: var(--muted);
+    max-width: 560px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--blue);
+    color: #06101d;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px #08a9ff44;
+}
+
+.btn-outline {
+    color: var(--blue);
+    background: transparent;
+}
+
+/* Profile Circle */
+.home-image {
+    text-align: center;
+}
+
+.image-circle {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 4px solid var(--blue);
+    background: linear-gradient(135deg, #102b50, #111a2b);
+    box-shadow: 0 0 45px #08a9ff44;
+    display: grid;
+    place-items: center;
+    font-size: 85px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.home-image p {
+    margin-top: 20px;
+    color: var(--blue);
+    letter-spacing: 2px;
+}
+
+/* Common Sections */
+.section {
+    padding: 65px 8%;
+    scroll-margin-top: 85px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 35px;
+}
+
+/* About */
+.about-card {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.about-card h3 {
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--muted);
+}
+
+/* Skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.skill {
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    border-color: var(--blue);
+    transform: translateY(-3px);
+}
+
+.skill span {
+    font-weight: bold;
+}
+
+/* Projects */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue);
+}
+
+.project-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.project-card a {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/* Contact */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--blue);
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
+
+#form-status {
+    color: var(--blue);
+}
+
+/* Footer */
+footer {
+    padding: 25px 8%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--blue);
+}
+
+/* Light Theme */
+body.light {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #152238;
+    --muted: #536176;
+    --blue: #007ac2;
+    --border: #d7e0ec;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 900px) {
+    .home {
+        padding-top: 55px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .home-image {
+        margin-top: 20px;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .home {
+        padding: 55px 5%;
+        min-height: auto;
+    }
+
+    .home h2 {
+        font-size: 21px;
+    }
+
+    .image-circle {
+        width: 210px;
+        height: 210px;
+        font-size: 65px;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .skills-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        padding: 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+	
+	</style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <a href="#home" class="logo">Shivam<span>Yadav.</span></a>
+
+        <button class="menu-btn" id="menu-btn"
+                aria-label="Toggle navigation"
+                aria-expanded="false">☰</button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button id="theme-btn" class="theme-btn"
+                    aria-label="Toggle color theme">☀️</button>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <p class="intro">HELLO, WELCOME TO MY WEBSITE</p>
+            <h1>I'm <span>Shivam Yadav</span></h1>
+            <h2>Future Web Developer</h2>
+
+            <p class="description">
+                I am learning web development and love creating
+                beautiful, modern and responsive websites using
+                HTML, CSS and JavaScript.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">My Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="home-image">
+            <div class="image-circle">SY</div>
+            <p>Dream. Learn. Create.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about-card">
+            <h3>Who Am I?</h3>
+            <p>
+                My name is Shivam Yadav. I am a beginner web developer
+                who enjoys learning new technologies and building
+                creative websites. My goal is to become a skilled
+                developer and work on exciting projects.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+            <div class="skill">HTML <span>01</span></div>
+            <div class="skill">CSS <span>02</span></div>
+            <div class="skill">JavaScript <span>03</span></div>
+            <div class="skill">Responsive Design <span>04</span></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="projects-container">
+            <article class="project-card">
+                <div class="project-icon">🌐</div>
+                <h3>My Portfolio</h3>
+                <p>A personal website to introduce myself.</p>
+                <a href="#home">Explore Website ↗️</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-icon">🐾</div>
+                <h3>Animal Website</h3>
+                <p>A creative website about beautiful animals.</p>
+                <a href="#projects">Explore Project ↗️</a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>A website layout for mobile and desktop screens.</p>
+                <a href="projects">Explore Project ↗️</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <form class="contact-form" id="contact-form">
+            <input type="text" id="name"
+                   placeholder="Your Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Your Email" required>
+
+            <textarea id="message"
+                      placeholder="Your Message"
+                      rows="5" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+            <p id="form-status" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Shivam Yadav.
+            Made with ❤️ and code.</p>
+        <a href="#home">Back to Top ↑</a>
+    </footer>
+	   <script src="script.js"></script>
+</body>
+</html>
